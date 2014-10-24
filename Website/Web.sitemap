@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode title="MenuDemo"  description="This is the root of the site map (do NOT display)">
+        <siteMapNode url="~/Default.aspx" title="Home"  description="Home page of website" />
+        <siteMapNode url="~/About.aspx" title="About"  description="About the company" />
+      <siteMapNode url="~/Contact.aspx" title="Contact"  description="Contact the company" />
+      <siteMapNode url="~/XMLFiles/XMLPage.aspx" title="XML"  description="XML Demo" />
+      <siteMapNode url="~/SiteMapPages/Products.aspx" title="Products" description="Product menu group">
+        <siteMapNode url="~/SiteMapPages/Hardware.aspx" title="Hardware" description="hardware" />
+        <siteMapNode url="~/SiteMapPages/Software.aspx" title="Software" description="software" />
+      </siteMapNode>
+      <siteMapNode title="Services" description="services menu group">
+        <siteMapNode url="~/SiteMapPages/Training.aspx" title="Training" description="training" />
+        <siteMapNode url="~/SiteMapPages/Consulting.aspx" title="Consulting" description="consulting" />
+        <siteMapNode url="~/SiteMapPages/Support.aspx" title="Support" description="support" />
+      </siteMapNode>
+      <siteMapNode title="Demos" description="class demos">
+         <siteMapNode url="~/DemoPages/ReservationbyTypes.aspx" title="Reservations by type" description="Reservations by type" />
+        <siteMapNode url="~/DemoPages/ListViewSpecialEventsCRUD.aspx" title="CRUD using ListView" description="CRUD using ListView" />
+        <siteMapNode url="~/DemoPages/RepeaterMenuCategories.aspx" title="Repeater MenuCategories" description="Repeater MenuCategories" />
+        <siteMapNode url="~/DemoPages/WaiterCRUD.aspx" title="Waiter Maintenance" description="Waiter Maintenance" />
+        <siteMapNode url="~/DemoPages/CategoryMenuItemsReport.aspx" title="Category MenuItems Report" description=" Category MenuItems Report" />
+      <siteMapNode url="~/DemoPages/TotalItemSalesByMenuCategory.aspx" title="Total Item Sales by Menu Category Report" description="Total Item Sales by Menu Category" />
+      </siteMapNode>
+      </siteMapNode>
+</siteMap>
