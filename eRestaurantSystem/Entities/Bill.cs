@@ -24,7 +24,6 @@ namespace eRestaurantSystem.Entities
         public int WaiterID { get; set; }
         public int? TableID { get; set; }
         public int? ReservationID { get; set; }
-        public bool OrderReady { get; set; }
         [StringLength(50,ErrorMessage="Comment has a max size of 50 characters")]
         public string Comment { get; set; }
 

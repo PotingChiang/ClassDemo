@@ -227,5 +227,18 @@ namespace eRestaurantSystem.BLL
         }
 
     #endregion
+
+        #region UX Clockpicker
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
+        public DateTime GetLastBillDateTime()
+        {
+            using (var context = new eRestaurantContext())
+            {
+                var results = context.Bills.Max(x => x.BillDate);
+
+                return results;
+            }
+        }
+        #endregion
     }
 }
