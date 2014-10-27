@@ -13,7 +13,10 @@ namespace eRestaurantSystem.Entities
         public int BillID { get; set; }
         [Required(ErrorMessage = "Bill Date is required.")]
         public DateTime BillDate { get; set; }
-        public DateTime OrderPlaced { get; set; }
+        public TimeSpan OrderPlaced { get; set; }
+        public TimeSpan OrderReady { get; set; }
+        public TimeSpan OrderServed { get; set; }
+        public TimeSpan OrderPaid { get; set; }
         [Required(ErrorMessage = "Number in party is required.")]
         public int NumberInParty { get; set; }
         public bool PaidStatus { get; set; }
