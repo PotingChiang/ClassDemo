@@ -17,7 +17,7 @@ public partial class DemoPages_WaiterCRUD : System.Web.UI.Page
         HiredDate.Text = DateTime.Today.ToShortDateString();
     }
 
-    protected void FetchWaiter_Click(object sender, EventArgs e)
+    protected void FetchWaiter_Click(object sender, EventArgs e) //ShowWaiter_Click
     {
         if (WaiterList.SelectedIndex == 0)
             MessageUserControl.ShowInfo("Please select a waiter before clicking Show Waiter.");
