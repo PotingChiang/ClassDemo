@@ -20,7 +20,11 @@
                        <h4>
                            <%# Eval("Description") %>
                            <%# ((decimal)Eval("Price")).ToString("C") %>
-                           <span class="badge"> <%# Eval("Calories") %> Calories</span>
+                           <span class="badge"> 
+                               <%# Eval("Calories") %> 
+                               Calories
+
+                           </span>
                            <%# Eval("Comment") %>
                        </h4>
                    </ItemTemplate>
