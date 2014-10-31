@@ -17,7 +17,7 @@ namespace eRestaurantSystem.BLL
     [DataObject]
     public class eRestaurantController
     {
-    #region SpecialEvents
+        #region SpecialEvents
         [DataObjectMethod(DataObjectMethodType.Select,false)]
         public List<SpecialEvent> SpecialEvent_List()
         {
@@ -79,7 +79,47 @@ namespace eRestaurantSystem.BLL
         }
     #endregion
 
-    #region Reservations
+        #region Reservations
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<DTOs.ReservationCollection> ReservationsByTime(DateTime date)
+        {
+            using (eRestaurantContext context = new eRestaurantContext())
+            {
+                var results = from data in context.Reservations
+                              where data.ReservationDate.Year == date.Year
+                                  && data.ReservationDate.Month == date.Month
+                                  && data.ReservationDate.Day == date.Day
+                                  //do it separately because date includes time 12:00am as its default
+                                  //&& data.ReservationStatus == 'B'                  
+                                  //char to string
+                                  && data.ReservationStatus == "B" 
+                              select new POCOs.ReservationSummary//DTO.className
+                              {
+                                  Name = data.CustomerName,
+                                  Date = data.ReservationDate,
+                                  Status = data.ReservationStatus,
+                                  //Event = data.SpecialEvents.Description,
+                                  Event = data.SpecialEvent.Description,//must match the class property name
+                                  //NumberInParty = data.NumberInParty,
+                                  NumberInParty = data.NumberinParty,//must match the class property name
+                                  Contact = data.ContactPhone
+                              };
+
+                //Ex. of using group
+                var finalResults = from item in results
+                                   orderby item.NumberInParty//must be here, before group 
+                                   group item by item.Date.TimeOfDay into itemGroup
+                                   select new DTOs.ReservationCollection//DTO.classname
+                                   {
+                                       //SeatingTime = itemGroup.Key,//to cate "key" as a field
+                                       SeatingTime = itemGroup.Key.ToString(),//type of property is string
+                                       Reservations = itemGroup.ToList()
+                                   };
+
+                return finalResults.ToList();
+            }
+        }
+
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Reservation> Reservation_List()
         {
@@ -241,4 +281,5 @@ namespace eRestaurantSystem.BLL
         }
         #endregion
     }
+
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eRestaurantSystem.DTOs
+namespace eRestaurantSystem.DTOs //DTO has properties and collections
 {
     public class CategoryMenuItems
     {

@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="BLL\eRestaurantController.cs" />
     <Compile Include="DAL\eRestaurantContext.cs" />
+    <Compile Include="DTOs\ReservationCollection.cs" />
+    <Compile Include="POCOs\ReservationSummary.cs" />
     <Compile Include="Entities\Bill.cs" />
     <Compile Include="Entities\BillItem.cs" />
     <Compile Include="Entities\Item.cs" />
