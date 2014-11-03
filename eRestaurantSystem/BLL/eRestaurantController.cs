@@ -242,7 +242,7 @@ namespace eRestaurantSystem.BLL
         #endregion
         #region Linq Queries
         [DataObjectMethod(DataObjectMethodType.Select,false)]
-    public List<DTOs.CategoryMenuItems> GetCategoryMenuItems()
+        public List<DTOs.CategoryMenuItems> GetCategoryMenuItems()
         {
             using(eRestaurantContext context = new eRestaurantContext())
             {
